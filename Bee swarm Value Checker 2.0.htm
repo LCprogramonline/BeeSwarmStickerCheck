@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bee swarm checkers</title>
+    <h1>Made by @luksio,@.lcplays,@dartdoogoo,@maxyuhh</h1>
+    
+    </style>
+</head>
+<body>
+
+<h1>Item Search</h1>
+
+<input type="text" id="searchInput" placeholder="Search by name..." oninput="filterItems()">
+<br><br>
+
+<label for="categorySelect">Filter by Category:</label>
+<select id="categorySelect" onchange="filterItems()">
+    <option value="">All Categories</option>
+    <option value="Cub Buddy">Cub buddy</option>
+    <option value="Gamepasses">Gamepasses</option>
+    <option value="Stickers">Stickers</option>
+</select>
+
+<div id="results"></div>
+
+<script>
+    const items = [
+        { name: 'Brown Cub: 14 Signs(low) ', category: 'Cub Buddy', image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/9/9d/Brown_Cub.png/revision/latest?cb=20230404050339' },
+        { name: 'Robo Cub: 4-5 Signs (low)', category: 'Cub Buddy', image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/d/d5/Robo_Cub.png/revision/latest?cb=20230403182434' },
+        { name: 'Stick Cub: 17+ Signs (very high)', category: 'Cub Buddy', image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/a/ac/Stick_Cub.png/revision/latest?cb=20231127204209' },
+        { name: 'Star Cub: 7 Signs (high)', category: 'Cub Buddy', image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/3/39/Star_Cub.png/revision/latest?cb=20231227155525' },
+        { name: 'Noob Cub: 10 Signs (mid)', category: 'Cub Buddy', image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/5/5f/Noob_Cub.png/revision/latest?cb=20230404050350' },
+        { name: 'Bee Cub: 35+ Signs(high)', category: 'Cub Buddy', image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/8/8b/Bee_Cub.png/revision/latest?cb=20230404050402' },       
+        { name: 'Gingerbread Cub: 7 Signs (low)', category: 'Cub Buddy', image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/b/b5/Gingerbread_Cub.png/revision/latest?cb=20230422135517' },
+        { name: 'Snow Cub: 17 Signs (mid)', category: 'Cub Buddy', image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/7/70/Snow_Cub.png/revision/latest?cb=20230403182819' },
+        { name: 'Peppermint Robo Cub: 12-13 Signs (mid)', category: 'Cub Buddy', image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/e/e1/Peppermint_Robo_Cub.png/revision/latest?cb=20230403182443' },
+        { name: 'Doodle Cub: 5 Signs (low)', category: 'Cub Buddy', image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/0/00/Doodle_Cub.png/revision/latest?cb=20240411152414' },   
+        { name: 'Cub Buddy Voucher: 0.7 Signs (very low)', category: 'Gamepasses', image: '' },
+        { name: 'Bear Bee Voucher: 2.5 Signs (high)', category: 'Gamepasses', image: '' }   ,
+        { name: 'x2 Bee Gather Voucher: 1.5 Signs (mid)', category: 'Gamepasses', image: '' },
+        { name: 'x2 Convert Speed: 1 Signs (mid)', category: 'Gamepasses', image: '' },
+        { name: '', category: '', image: '' },
+        { name: '', category: '', image: '' },  
+        { name: '', category: '', image: '' },
+        { name: '', category: '', image: '' },   
+        { name: '', category: '', image: '' },  
+        { name: '', category: '', image: '' },          
+        { name: '', category: '', image: '' },  
+        { name: '', category: '', image: '' },
+        { name: '', category: '', image: '' },   
+        { name: '', category: '', image: '' },  
+        { name: '', category: '', image: '' },        
+        { name: '', category: '', image: '' },  
+        { name: '', category: '', image: '' },
+        { name: '', category: '', image: '' },   
+        { name: '', category: '', image: '' },  
+        { name: '', category: '', image: '' }, 
+        { name: '', category: '', image: '' }
+    ];
+
+    function displayResults(filteredItems) {
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = filteredItems.length > 0 
+            ? filteredItems.map(item => `
+                <div class="item">
+                    <img src="${item.image}" alt="${item.name}">
+                    <div>
+                        <h3>${item.name}</h3>
+                        <p>Category: ${item.category}</p>
+                    </div>
+                </div>
+            `).join('')
+            : 'No results found';
+    }
+
+    function filterItems() {
+        const searchInput = document.getElementById('searchInput').value.toLowerCase();
+        const selectedCategory = document.getElementById('categorySelect').value;
+
+        const filteredItems = items.filter(item => {
+            const matchesName = item.name.toLowerCase().includes(searchInput);
+            const matchesCategory = selectedCategory === '' || item.category === selectedCategory;
+            return matchesName && matchesCategory;
+        });
+
+        displayResults(filteredItems);
+    }
+
+    // Initial display of all items
+    displayResults(items);
+</script>
+
+</body>
+</html>
