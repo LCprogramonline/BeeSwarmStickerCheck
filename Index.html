@@ -3,12 +3,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bee swarm checkers</title>
-    <h1>Made by @luksio,@.lcplays,@dartdoogoo,@maxyuhh</h1>
+    <h1 border-style: solid;
+  border-width: medium;>
+  Made by @luksio,@.lcplays,@dartdoogoo,@maxyuhh</h1>
     
-    </style>
+    </style> 
 </head>
-<body>
-
+<body style=background-color:#FFFFDD
 <h1>Item Search</h1>
 
 <input type="text" id="searchInput" placeholder="Search by name..." oninput="filterItems()">
@@ -26,12 +27,12 @@
 
 <script>
     const items = [
-        { name: 'Brown Cub: 14 Signs(low) ', category: 'Cub Buddy', image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/9/9d/Brown_Cub.png/revision/latest?cb=20230404050339' },
-        { name: 'Robo Cub: 4-5 Signs (low)', category: 'Cub Buddy', image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/d/d5/Robo_Cub.png/revision/latest?cb=20230403182434' },
-        { name: 'Stick Cub: 17+ Signs (very high)', category: 'Cub Buddy', image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/a/ac/Stick_Cub.png/revision/latest?cb=20231127204209' },
-        { name: 'Star Cub: 7 Signs (high)', category: 'Cub Buddy', image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/3/39/Star_Cub.png/revision/latest?cb=20231227155525' },
-        { name: 'Noob Cub: 10 Signs (mid)', category: 'Cub Buddy', image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/5/5f/Noob_Cub.png/revision/latest?cb=20230404050350' },
-        { name: 'Bee Cub: 35+ Signs(high)', category: 'Cub Buddy', image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/8/8b/Bee_Cub.png/revision/latest?cb=20230404050402' },       
+        { name: 'Brown Cub: 14 Signs(low demands) ', category: 'Cub Buddy', image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/9/9d/Brown_Cub.png/revision/latest?cb=20230404050339' },
+        { name: 'Robo Cub: 4-5 Signs (low demands)', category: 'Cub Buddy', image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/d/d5/Robo_Cub.png/revision/latest?cb=20230403182434' },
+        { name: 'Stick Cub: 17+ Signs (very high demands)', category: 'Cub Buddy', image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/a/ac/Stick_Cub.png/revision/latest?cb=20231127204209' },
+        { name: 'Star Cub: 7 Signs (high demands)', category: 'Cub Buddy', image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/3/39/Star_Cub.png/revision/latest?cb=20231227155525' },
+        { name: 'Noob Cub: 10 Signs (mid demand)', category: 'Cub Buddy', image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/5/5f/Noob_Cub.png/revision/latest?cb=20230404050350' },
+        { name: 'Bee Cub: 35+ Signs(high demands)', category: 'Cub Buddy', image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/8/8b/Bee_Cub.png/revision/latest?cb=20230404050402' },       
         { name: 'Gingerbread Cub: 7 Signs (low)', category: 'Cub Buddy', image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/b/b5/Gingerbread_Cub.png/revision/latest?cb=20230422135517' },
         { name: 'Snow Cub: 17 Signs (mid)', category: 'Cub Buddy', image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/7/70/Snow_Cub.png/revision/latest?cb=20230403182819' },
         { name: 'Peppermint Robo Cub: 12-13 Signs (mid)', category: 'Cub Buddy', image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/e/e1/Peppermint_Robo_Cub.png/revision/latest?cb=20230403182443' },
